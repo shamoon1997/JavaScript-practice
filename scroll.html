@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<button
+			class="btn-scroll"
+			onclick="executeScrollDown()"
+			style="position: relative"
+		>
+			Scroll down
+		</button>
+		<button
+			class="btn-scroll"
+			style="position: relative; top: 2000px; left: 0"
+			onclick="executeScroll()"
+		>
+			Scroll up
+		</button>
+
+		<script>
+			function executeScroll() {
+				console.log('Scroll top method called');
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			}
+			function executeScrollDown() {
+				console.log('Scroll down method called');
+				console.log('document.body.scrollHeight', document.body.scrollHeight);
+				window.scrollTo({
+					top: document.body.scrollHeight,
+					left: 0,
+					behavior: 'smooth',
+				});
+			}
+		</script>
+	</body>
+</html>
